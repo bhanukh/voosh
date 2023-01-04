@@ -6,14 +6,14 @@ import RegistrationForm from "./Components/RegistrationForm";
 
 function App() {
   const localStorageData = JSON.parse(localStorage.getItem("new_User"));
-  const [loggedIn, setLoggedIn] = useState(localStorageData== null)
+  const [loggedIn] = useState(localStorageData== null)
+        
   return (
     <div>
       <Navbar />
       {
         loggedIn?(<><Demo/><RegistrationForm/></>):(<h1 className="user">{"Welcome: "+ localStorageData.name}</h1>)
       }
-
     </div>
     
   );
